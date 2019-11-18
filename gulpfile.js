@@ -1,37 +1,48 @@
 var gulp = require('gulp');
-var imagemin = require('gulp-imagemin');
-var coffee = require('gulp-coffee');
-var concat = require('gulp-concat');
-var uglify = require('gulp-uglify');
-var plumber = require('gulp-plumber');
+var sass = require('gulp-sass');
+var browsersync = require('browser-sync').create();
 
-gulp.task('html', (done)=> {
-    gulp.src('./src/index.html')
-    	.pipe(gulp.dest('./dist'));
-    done();
-});
 
-gulp.task('img', (done)=> {
-    gulp.src('./src/*.jpg')
-        .pipe(gulp.dest('./dist/img'));
-        done();
-});
-
-gulp.task('js', (done)=> {
-    gulp.src('./src/coffee/*.coffee')
-    	.pipe(plumber())
-    	.pipe(coffee())
-    	.pipe(concat('all.min.js'))
-    	.pipe(uglify())
-        .pipe(gulp.dest('./dist/js'));
-        done();
-});
-
-gulp.task('watch', (done)=> {
-    gulp.watch('./src/coffee/*.coffee', gulp.series('js'));
-    done();
-});
-
-gulp.task('default', gulp.parallel('html', 'img', 'js', 'watch', function(done) {
+gulp.task('sass', function(done) {
+	return (
+		gulp
+			.src('./css/styles.scss')
+			.pipe(sass())
+			.pipe(gulp.dest('./css'))
+	);
+    gulp.task('browser-reload')
 	done();
+});
+
+gulp.task('build-server', function (done) {
+    browsersync.init({
+        server: {
+            baseDir: "./"
+        }
+    });
+    done();
+    console.log('Server was launched');
+});
+
+// ブラウザのリロード
+gulp.task('browser-reload', function (done){
+    browsersync.reload();
+    done();
+    console.log('Browser reload completed');
+});
+
+// 監視ファイル
+gulp.task('watch-files', function(done) {
+    gulp.watch("./*.html", gulp.task('browser-reload'));
+    gulp.watch("./*/*.css", gulp.task('browser-reload'));
+    gulp.watch("./*/*.js", gulp.task('browser-reload'));
+    gulp.watch("./*/*.scss", gulp.task('sass'));
+    done();
+    console.log(('gulp watch started'));
+});
+
+// タスクの実行
+gulp.task('default', gulp.series('build-server', 'watch-files', function(done){
+    done();
+    console.log('Default all task done!');
 }));

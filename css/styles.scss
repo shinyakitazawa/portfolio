@@ -20,13 +20,44 @@ path {
 	height: 50%;
 	z-index: -1;
     animation: fadeIn 4s ease 0s 1 normal;
+    &__title {
+        width: 369px;
+        display: block;
+        margin: 0 auto;
+        padding: 10% 0;
+    }
 }
 
-.title {
-    width: 369px;
-    display: block;
-    margin: 0 auto;
-    padding: 10% 0;
+.portfolio {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+    background-image: url(../img/marble_background.png);
+    &__art {
+        width: var(--art-size);
+        height: var(--art-size);
+        background: rgb(250,250,230);
+        border: 2px solid rgb(130,130,130);
+        margin: 10px auto;
+        border-radius: 10px;
+        img {
+            width: calc(var(--art-size) - 20px );
+            height: calc(var(--art-size) - 20px );
+            margin: 10px 10px;
+            object-fit: cover;
+        }
+        &:hover{
+            animation: vibration .1s  infinite;
+        }
+    }
+}
+
+.about {
+    p {
+        padding-left: 15px;
+        font-size: 14px;
+        line-height: 15px;
+    }
 }
 
 .container {
@@ -36,25 +67,14 @@ path {
 
 }
 
-.art {
-	width: var(--art-size);
-	height: var(--art-size);
-	background: rgb(250,250,230);
-	border: 2px solid rgb(130,130,130);
-	margin: 10px auto;
-	border-radius: 10px;
-    img {
-        width: calc(var(--art-size) - 20px );
-        height: calc(var(--art-size) - 20px );
-        margin: 10px 10px;
-        object-fit: cover;
-    }
-}
-
-
 .hidden {
 	display:none;
 }
+
+.done {
+    display: none;
+}
+
 
 #humbMenu {
 	position: absolute;
@@ -69,6 +89,7 @@ path {
     position: absolute;
     right: var(--menu-right);
     top: 40px;
+    z-index: 2;
     li {
         list-style: none;
         background: #000;
@@ -83,25 +104,10 @@ path {
         }
     }
 }
-#about p {
-	padding-left: 15px;
-	font-size: 14px;
-	line-height: 15px;
-}
-
-#portfolio {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-}
 
 #logo {
     filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.6));
     animation: fadeIn 2s ease 0s 1 normal;
-}
-
-.done {
-    display: none;
 }
 
 /*　↓↓↓↓↓　アニメーション*/
@@ -109,6 +115,14 @@ path {
 @keyframes fadeIn {
     0% {opacity: 0}
     100% {opacity: 1}
+}
+
+@keyframes vibration {
+    0% {transform: translate(0px, 0px) rotateZ(0deg)}
+    25% {transform: translate(0px, 2px) rotateZ(1deg)}
+    50% {transform: translate(2px, 2px) rotateZ(0deg)}
+    75% {transform: translate(2px, 0px) rotateZ(-1deg)}
+    100% {transform: translate(0px, 0px) rotateZ(0deg)}
 }
 
 /*　↑↑↑↑↑　アニメーション*/
