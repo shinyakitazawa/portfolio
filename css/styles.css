@@ -67,6 +67,9 @@ path {
   right: var(--menu-right);
   top: 10px;
   cursor: pointer; }
+  @media (min-width: 600px) {
+    #humbMenu {
+      display: none; } }
 
 #nav-bar {
   position: absolute;
@@ -74,8 +77,9 @@ path {
   top: 40px;
   z-index: 2; }
   #nav-bar li {
+    font-size: 14px;
     list-style: none;
-    background: #000;
+    background: #221300;
     padding: 10px 20px;
     border: solid 1px #505050;
     border-collapse: collapse;
@@ -84,6 +88,19 @@ path {
       text-decoration: none;
       color: #ccc;
       cursor: pointer; }
+  @media (min-width: 600px) {
+    #nav-bar {
+      top: 0px;
+      display: block; }
+      #nav-bar li {
+        display: inline-flex;
+        font-size: 20px;
+        padding: 5px 20px;
+        background: transparent;
+        border: none; }
+        #nav-bar li a {
+          color: black;
+          filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.6)); } }
 
 #logo {
   filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.6));
