@@ -1,7 +1,8 @@
 @charset "UTF-8";
 :root {
   --menu-right: 10px;
-  --art-size: 200px; }
+  --art-size: 200px;
+  --art-size-sm: 150; }
 
 body, html {
   height: 100%;
@@ -34,8 +35,11 @@ path {
     height: var(--art-size);
     background: #fafae6;
     border: 2px solid #828282;
-    margin: 10px auto;
-    border-radius: 10px; }
+    margin: 15px auto;
+    border-image-slice: 50;
+    border-image-width: 15px;
+    border-image-repeat: stretch stretch;
+    border-image-source: url(../img/woodFrame.png); }
     .portfolio__art img {
       width: calc(var(--art-size) - 20px);
       height: calc(var(--art-size) - 20px);
@@ -50,9 +54,7 @@ path {
   line-height: 15px; }
 
 .container {
-  position: relative;
-  z-index: 1;
-  background: #eee; }
+  position: relative; }
 
 .hidden {
   display: none; }
@@ -63,9 +65,9 @@ path {
 #humbMenu {
   position: absolute;
   color: #fff;
-  font-size: 30px;
+  font-size: 25px;
   right: var(--menu-right);
-  top: 10px;
+  top: 8px;
   cursor: pointer; }
   @media (min-width: 600px) {
     #humbMenu {
@@ -74,7 +76,7 @@ path {
 #nav-bar {
   position: absolute;
   right: var(--menu-right);
-  top: 40px;
+  top: 35px;
   z-index: 2; }
   #nav-bar li {
     font-size: 14px;

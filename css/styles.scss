@@ -1,6 +1,7 @@
 :root {
   --menu-right: 10px;
   --art-size: 200px;
+  --art-size-sm: 150;
 }
 
 body,html {
@@ -38,8 +39,11 @@ path {
         height: var(--art-size);
         background: rgb(250,250,230);
         border: 2px solid rgb(130,130,130);
-        margin: 10px auto;
-        border-radius: 10px;
+        margin: 15px auto;
+        border-image-slice: 50;
+        border-image-width: 15px;
+        border-image-repeat: stretch stretch;
+        border-image-source: url(../img/woodFrame.png);
         img {
             width: calc(var(--art-size) - 20px );
             height: calc(var(--art-size) - 20px );
@@ -62,8 +66,7 @@ path {
 
 .container {
 	position: relative;
-	z-index: 1;
-	background: #eee;
+
 
 }
 
@@ -79,9 +82,9 @@ path {
 #humbMenu {
 	position: absolute;
 	color: #fff;
-	font-size: 30px;
+	font-size: 25px;
 	right: var(--menu-right);
-	top: 10px;
+	top: 8px;
 	cursor: pointer;
     @media (min-width: 600px) {
         display: none;   
@@ -92,7 +95,7 @@ path {
 #nav-bar {
     position: absolute;
     right: var(--menu-right);
-    top: 40px;
+    top: 35px;
     z-index: 2;
     li {
         font-size: 14px;
