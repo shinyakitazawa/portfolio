@@ -12,7 +12,13 @@
 	arts = Array.prototype.slice.call(arts);
 	arts.forEach(art => {
 		art.addEventListener('click', (e) => {
-			alert(art.className);
+            if (art.dataset.img != undefined)
+            {
+                alert(art.dataset.img);
+            } else {
+                alert(art.getElementsByTagName('img')[0].src);
+            }
+			
 		});
 	});
 	
