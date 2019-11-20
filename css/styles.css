@@ -1,9 +1,4 @@
 @charset "UTF-8";
-:root {
-  --menu-right: 10px;
-  --art-size: 200px;
-  --art-size-sm: 150; }
-
 body, html {
   height: 100%;
   margin: 0 auto; }
@@ -26,35 +21,62 @@ path {
     padding: 10% 0; }
 
 .portfolio {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   background-image: url(../img/marble_background.png); }
+  .portfolio__title {
+    display: block;
+    font-size: 40px;
+    font-family: "Bermuda Script", "Bickham Script Pro Semibold";
+    margin: 0 0;
+    padding: 10px 20px; }
+  .portfolio__categ {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; }
   .portfolio__art {
-    width: var(--art-size);
-    height: var(--art-size);
+    width: 150px;
+    height: 150px;
     background: #fafae6;
     border: 2px solid #828282;
-    margin: 15px auto;
+    margin: 10px 10px;
     border-image-slice: 50;
     border-image-width: 15px;
     border-image-repeat: stretch stretch;
     border-image-source: url(../img/woodFrame.png); }
     .portfolio__art img {
-      width: calc(var(--art-size) - 20px);
-      height: calc(var(--art-size) - 20px);
+      width: 130px;
+      height: 130px;
       margin: 10px 10px;
       object-fit: cover; }
     .portfolio__art:hover {
       animation: vibration .1s  infinite; }
+    @media screen and (min-width: 560x) {
+      .portfolio__art {
+        width: 200px;
+        height: 200px;
+        margin: 20px 20px; }
+        .portfolio__art img {
+          width: 180px;
+          height: 180px; } }
+    @media screen and (min-width: 960px) {
+      .portfolio__art {
+        width: 250px;
+        height: 250px; }
+        .portfolio__art img {
+          width: 230px;
+          height: 230px; } }
 
 .about p {
   padding-left: 15px;
   font-size: 14px;
-  line-height: 15px; }
+  line-height: 15px;
+  background: grey; }
 
 .container {
   position: relative; }
+  @media screen and (min-width: 1200px) {
+    .container {
+      width: 1200px;
+      margin: 0 auto; } }
 
 .hidden {
   display: none; }
@@ -66,16 +88,16 @@ path {
   position: absolute;
   color: #fff;
   font-size: 25px;
-  right: var(--menu-right);
+  right: 10px;
   top: 8px;
   cursor: pointer; }
-  @media (min-width: 600px) {
+  @media screen and (min-width: 560x) {
     #humbMenu {
       display: none; } }
 
 #nav-bar {
   position: absolute;
-  right: var(--menu-right);
+  right: 10px;
   top: 35px;
   z-index: 2; }
   #nav-bar li {
@@ -90,7 +112,7 @@ path {
       text-decoration: none;
       color: #ccc;
       cursor: pointer; }
-  @media (min-width: 600px) {
+  @media screen and (min-width: 560x) {
     #nav-bar {
       top: 0px;
       display: block; }

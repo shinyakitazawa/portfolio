@@ -1,8 +1,19 @@
-:root {
-  --menu-right: 10px;
-  --art-size: 200px;
-  --art-size-sm: 150;
+$breakpoints: (
+  'sm': 'screen and (min-width: 560x)',
+  'md': 'screen and (min-width: 960px)',
+  'lg': 'screen and (min-width: 1200px)'
+) !default;
+
+@mixin mq($breakpoint: md) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
 }
+
+$art-size-sm: 150px;
+$art-size-md: 200px;
+$art-size-lg: 250px;
+$menu-right: 10px;
 
 body,html {
     height: 100%;
@@ -30,29 +41,55 @@ path {
 }
 
 .portfolio {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
     background-image: url(../img/marble_background.png);
+	&__title {
+		display: block;
+		font-size: 40px;
+        font-family: "Bermuda Script", "Bickham Script Pro Semibold";
+		margin: 0 0;
+		padding: 10px 20px;
+	}
+	&__categ {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
     &__art {
-        width: var(--art-size);
-        height: var(--art-size);
+        width: $art-size-sm;
+        height: $art-size-sm;
         background: rgb(250,250,230);
         border: 2px solid rgb(130,130,130);
-        margin: 15px auto;
+        margin: 10px 10px;
         border-image-slice: 50;
         border-image-width: 15px;
         border-image-repeat: stretch stretch;
         border-image-source: url(../img/woodFrame.png);
         img {
-            width: calc(var(--art-size) - 20px );
-            height: calc(var(--art-size) - 20px );
+            width: $art-size-sm - 20px;
+            height: $art-size-sm - 20px;
             margin: 10px 10px;
             object-fit: cover;
         }
         &:hover{
             animation: vibration .1s  infinite;
         }
+		@include mq(sm) {
+			width: $art-size-md;
+			height: $art-size-md;
+			margin: 20px 20px;
+			img {
+				width: $art-size-md - 20px;
+				height: $art-size-md - 20px;
+			}	
+		}
+		@include mq(md) {
+			width: $art-size-lg;
+			height: $art-size-lg;
+			img {
+				width: $art-size-lg - 20px;
+				height: $art-size-lg - 20px;
+			}	
+		}
     }
 }
 
@@ -61,13 +98,16 @@ path {
         padding-left: 15px;
         font-size: 14px;
         line-height: 15px;
+		background: grey;
     }
 }
 
 .container {
 	position: relative;
-
-
+    @include mq(lg) {
+        width: 1200px;
+		margin: 0 auto;
+    }
 }
 
 .hidden {
@@ -83,10 +123,10 @@ path {
 	position: absolute;
 	color: #fff;
 	font-size: 25px;
-	right: var(--menu-right);
+	right: $menu-right;
 	top: 8px;
 	cursor: pointer;
-    @media (min-width: 600px) {
+    @include mq(sm) {
         display: none;   
     }
     
@@ -94,7 +134,7 @@ path {
 
 #nav-bar {
     position: absolute;
-    right: var(--menu-right);
+    right: $menu-right;
     top: 35px;
     z-index: 2;
     li {
@@ -111,7 +151,7 @@ path {
             cursor: pointer;
         }
     }
-    @media (min-width: 600px) {
+    @include mq(sm) {
         top: 0px;
         display: block;
         li {
