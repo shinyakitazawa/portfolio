@@ -84,6 +84,13 @@ path {
 .done {
   display: none; }
 
+.modal {
+  z-index: 2;
+  position: fixed;
+  top: 20px;
+  text-align: center;
+  width: 100%; }
+
 #humbMenu {
   position: absolute;
   color: #fff;
