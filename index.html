@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" href="favicon.ico">
+	<link href="https://fonts.googleapis.com/css?family=Aguafina+Script&display=swap" rel="stylesheet"> 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vivus/0.3.2/vivus.js"></script>
-    
 </head>
     
 <body>
@@ -195,26 +195,37 @@
 
     <div class="portfolio container">
 
-		<p class="portfolio__title">corporate logos</p>
-		<div class="portfolio__categ">
-			<div class="portfolio__art" data-img="LOGO"><img src="img/GCH.png"></div>
-			<div class="portfolio__art"><img src="img/soredekoso.jpg"></div>
-		</div>
-
 		<p class="portfolio__title">posters</p>
 		<div class="portfolio__categ">
-			<div class="portfolio__art"></div>
-			<div class="portfolio__art"></div>
-			<div class="portfolio__art"></div>
-			<div class="portfolio__art"></div>
-		</div>		
-
+			<div class="portfolio__art"><img src="img/hirano.png"></div>
+			<div class="portfolio__art"><img src="img/shorai.png"></div>
+			<div class="portfolio__art" data-img="img/shorai2.png"><img src="img/shorai2_thumb.png"></div>
+			<div class="portfolio__art"><img src="img/soredekoso.jpg"></div>
+			<div class="portfolio__art" data-img="img/majo.jpg"><img src="img/majo_thumb.jpg"></div>
+		</div>
+        
+        <p class="portfolio__title">corporate logos</p>
+		<div class="portfolio__categ">
+			<div class="portfolio__art"><img src="img/GCH.png"></div>
+			<div class="portfolio__art"><img src="img/Shin.png"></div>
+			<div class="portfolio__art" data-img="img/MailZipper.png"><img src="img/MailZipper_thumb.jpg"></div>
+            <div class="portfolio__art"><img src="img/eyeD2.jpg"></div>            
+			<div class="portfolio__art"><img src="img/mag.jpg"></div>
+			<div class="portfolio__art"><img src="img/hotel.jpg"></div>
+		</div>
+		
+        <p class="portfolio__title">new year's card</p>
+		<div class="portfolio__categ">
+			<div class="portfolio__art"><img src="img/2016.jpg"></div>
+			<div class="portfolio__art" data-img="img/2019.png"><img src="img/2019_thumb.png"></div>
+		</div>
+		
 		<p class="portfolio__title">3D prints</p>
 		<div class="portfolio__categ">
-			<div class="portfolio__art"></div>
-			<div class="portfolio__art"></div>
-			<div class="portfolio__art"></div>
-			<div class="portfolio__art"></div>
+			<div class="portfolio__art"><img src="img/"></div>
+			<div class="portfolio__art"><img src="img/"></div>
+			<div class="portfolio__art"><img src="img/"></div>
+			<div class="portfolio__art"><img src="img/"></div>
 		</div>		
 	</div>
 	
@@ -227,11 +238,9 @@
         <p>本サイトは一切フリー素材等を使用せず、Photoshop,illustrator,blender(トップの背景)を使用して作成しております。</p>
 	</div>
 
-<!--
-	<div class="modal">
-		<img src="./img/modelno.png">
-	<div>
--->
+	<div class="modal" id="artModal">
+		<img id="artImg">
+	</div>
 
     <script>
         new Vivus('layer', { duration: 300 , start: 'autostart',type: 'scenario', pathTimingFunction: Vivus.EASE_OUT,}, function(obj){

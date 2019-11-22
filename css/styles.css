@@ -25,7 +25,7 @@ path {
   .portfolio__title {
     display: block;
     font-size: 40px;
-    font-family: "Bermuda Script", "Bickham Script Pro Semibold";
+    font-family: 'Aguafina Script', cursive;
     margin: 0 0;
     padding: 10px 20px; }
   .portfolio__categ {
@@ -41,7 +41,8 @@ path {
     border-image-slice: 50;
     border-image-width: 15px;
     border-image-repeat: stretch stretch;
-    border-image-source: url(../img/woodFrame.png); }
+    border-image-source: url(../img/woodFrame.png);
+    filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.4)); }
     .portfolio__art img {
       width: 130px;
       height: 130px;
@@ -86,10 +87,19 @@ path {
 
 .modal {
   z-index: 2;
+  top: 0;
   position: fixed;
-  top: 20px;
   text-align: center;
-  width: 100%; }
+  width: 100%;
+  height: 100%;
+  display: none;
+  margin: 10px auto;
+  background: rgba(0, 0, 0, 0.7); }
+
+#artImg {
+  max-width: 100%;
+  max-height: 100%;
+  animation: ZoomIn 1s ease 0s 1 normal; }
 
 #humbMenu {
   position: absolute;
@@ -143,6 +153,12 @@ path {
     opacity: 0; }
   100% {
     opacity: 1; } }
+
+@keyframes ZoomIn {
+  0% {
+    transform: scale(0); }
+  100% {
+    transform: scale(1); } }
 
 @keyframes vibration {
   0% {

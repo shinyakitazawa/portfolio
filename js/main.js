@@ -9,17 +9,25 @@
 	
 	// ポートフォリオクリック時
 	var arts = document.getElementsByClassName('portfolio__art');
+	var img;
 	arts = Array.prototype.slice.call(arts);
 	arts.forEach(art => {
 		art.addEventListener('click', (e) => {
             if (art.dataset.img != undefined)
             {
-                alert(art.dataset.img);
+                img = art.dataset.img;
             } else {
-                alert(art.getElementsByTagName('img')[0].src);
+                img = art.getElementsByTagName('img')[0].src;
             }
-			
+			document.getElementById('artModal').style.display ="block";
+			document.getElementById('artImg').src=img;
 		});
+	});
+	
+	// モーダルクリックで閉じる
+	var modal = document.getElementById('artModal');
+	modal.addEventListener('click', ()=> {
+		document.getElementById('artModal').style.display ="none";
 	});
 	
 })();
