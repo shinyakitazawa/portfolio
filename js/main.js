@@ -7,6 +7,17 @@
 		navBar.classList.toggle('hidden');
 	});
 	
+	// スムーススクロール
+	$('a[href^="#"]').click(function(){
+		var speed = 500;
+		var href = $(this).attr("href");
+		var target = $(href == "#" || href == "" ? 'html' : href);
+		var position = target.offset().top;
+		$("html, body").animate({scrollTop:position}, speed, "swing");
+		navBar.classList.toggle('hidden');
+		return false;
+	});
+	
 	// ポートフォリオクリック時
 	var arts = document.getElementsByClassName('portfolio__art');
 	var img;
@@ -19,7 +30,7 @@
             } else {
                 img = art.getElementsByTagName('img')[0].src;
             }
-			document.getElementById('artModal').style.display ="block";
+			document.getElementById('artModal').style.display ="flex";
 			document.getElementById('artImg').src=img;
 		});
 	});
@@ -29,5 +40,17 @@
 	modal.addEventListener('click', ()=> {
 		document.getElementById('artModal').style.display ="none";
 	});
-	
+
+	// スクロール時にフェードイン
+	$(window).scroll(function (){
+	    $('.fadein').each(function(){
+	        var elemPos = $(this).offset().top,
+                scroll = $(window).scrollTop(),
+                windowHeight = $(window).height();
+	        if (scroll > elemPos - windowHeight + 100){
+	            $(this).addClass('scrollin');
+	        }
+	    });
+	});
+
 })();

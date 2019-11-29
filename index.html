@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="utf-8">
@@ -13,14 +13,14 @@
 </head>
     
 <body>
-	<header>
+	<header id="header">
 		<script src="js/main.js"></script>        
 		<div id="humbMenu"><i class="fas fa-bars"></i></div>
 		<nav id="nav-bar" class="hidden">
 			<ul>
-				<li><a href="/">Home</a></li>
-				<li><a href="/">About</a></li>
-				<li><a href="/">Portfolio</a></li>
+				<li><a href="#header">Home</a></li>
+				<li><a href="#portfolio">Portfolio</a></li>
+				<li><a href="#about">About</a></li>
 			</ul>
 		</nav>
         	<div class="bg">
@@ -190,53 +190,93 @@
         </div>
 
 	</header>
+	
 
+    <div class="portfolio container" id="portfolio">
 
-
-    <div class="portfolio container">
-
-		<p class="portfolio__title">posters</p>
+		<p class="portfolio__title fadein">posters</p>
 		<div class="portfolio__categ">
-			<div class="portfolio__art"><img src="img/hirano.png"></div>
-			<div class="portfolio__art"><img src="img/shorai.png"></div>
-			<div class="portfolio__art" data-img="img/shorai2.png"><img src="img/shorai2_thumb.png"></div>
-			<div class="portfolio__art"><img src="img/soredekoso.jpg"></div>
-			<div class="portfolio__art" data-img="img/majo.jpg"><img src="img/majo_thumb.jpg"></div>
+			<div class="portfolio__art fadein"><img src="img/hirano.png"></div>
+			<div class="portfolio__art fadein"><img src="img/shorai.png"></div>
+			<div class="portfolio__art fadein" data-img="img/shorai2.png"><img src="img/shorai2_thumb.png"></div>
+			<div class="portfolio__art fadein"><img src="img/soredekoso.jpg"></div>
+			<div class="portfolio__art fadein" data-img="img/majo.jpg"><img src="img/majo_thumb.jpg"></div>
 		</div>
         
-        <p class="portfolio__title">corporate logos</p>
+        <p class="portfolio__title fadein">corporate logos</p>
 		<div class="portfolio__categ">
-			<div class="portfolio__art"><img src="img/GCH.png"></div>
-			<div class="portfolio__art"><img src="img/Shin.png"></div>
-			<div class="portfolio__art" data-img="img/MailZipper.png"><img src="img/MailZipper_thumb.jpg"></div>
-            <div class="portfolio__art"><img src="img/eyeD2.jpg"></div>            
-			<div class="portfolio__art"><img src="img/mag.jpg"></div>
-			<div class="portfolio__art"><img src="img/hotel.jpg"></div>
+			<div class="portfolio__art fadein"><img src="img/GCH.png"></div>
+			<div class="portfolio__art fadein"><img src="img/Shin.png"></div>
+			<div class="portfolio__art fadein" data-img="img/MailZipper.png"><img src="img/MailZipper_thumb.jpg"></div>
+            <div class="portfolio__art fadein"><img src="img/eyeD2.jpg"></div>            
+			<div class="portfolio__art fadein"><img src="img/mag.jpg"></div>
+			<div class="portfolio__art fadein"><img src="img/hotel.jpg"></div>
 		</div>
 		
-        <p class="portfolio__title">new year's card</p>
+        <p class="portfolio__title fadein">new year's card</p>
 		<div class="portfolio__categ">
-			<div class="portfolio__art"><img src="img/2016.jpg"></div>
-			<div class="portfolio__art" data-img="img/2019.png"><img src="img/2019_thumb.png"></div>
+			<div class="portfolio__art fadein"><img src="img/2016.jpg"></div>
+			<div class="portfolio__art fadein" data-img="img/2019.png"><img src="img/2019_thumb.png"></div>
 		</div>
 		
-		<p class="portfolio__title">3D prints</p>
+		<p class="portfolio__title fadein">3D prints</p>
 		<div class="portfolio__categ">
-			<div class="portfolio__art"><img src="img/case1.png"></div>
-			<div class="portfolio__art"><img src="img/case2.png"></div>
-			<div class="portfolio__art"><img src="img/case3.png"></div>
-			<div class="portfolio__art"><img src="img/case4.png"></div>
+			<div class="portfolio__art fadein"><img src="img/case1.png"></div>
+			<div class="portfolio__art fadein"><img src="img/case2.png"></div>
+			<div class="portfolio__art fadein"><img src="img/case3.png"></div>
+			<div class="portfolio__art fadein"><img src="img/case4.png"></div>
 		</div>		
 	</div>
-	
-	<div class="about container">
-		<p>北澤 伸哉</p>
-		<p>〒372-0813</p>
-		<p>群馬県伊勢崎市韮塚町 390-1</p>
+
+    <div class="about container" id="about">
+		<h1>北澤 伸哉</h1>
+		<p>生年月日：1988年5月2日</p>
+		<p>出身：群馬県伊勢崎市</p>
 		<p>tel: 090-1736-8535</p>
 		<p>mail: reec8672@gmail.com</p>
-        <p>本サイトは一切フリー素材等を使用せず、Photoshop,illustrator,blender(トップの背景)を使用して作成しております。</p>
+		<p>大学卒業後、6年間システムエンジニアとして勤務し、主に業務系・WEB系システムの開発に携わる。</p>
+		<p>学生の頃より、グラフィック・3DCGに興味があり、Photoshopやblenderを独学で学び、2D/3Dグラフィックの作成経験あり。</p>
+		<p>4年ほど前よりillustratorを独学で学び始め、知り合いを通じてチラシや名刺、コーポレートロゴの制作を引き受ける。</p>
+		<p>実務でWEB系システム開発を経験したことをきっかけにホームページの作成も受注するようになり、複数のホームページ作成の経験あり。</p>
+
+		<div class="skilltbl">
+			<div class="skilltbl__title">skills</div>
+			<table border="0" class="skilltbl__skills">
+				<tr>
+					<th class="skilltbl__skills__item">illustrator</th>
+					<th class="skilltbl__skills__level">★★★★★</th>
+				</tr>
+				<tr>
+					<th class="skilltbl__skills__item">Photoshop</th>
+					<th class="skilltbl__skills__level">★★★☆☆</th>
+				</tr>
+				<tr>
+					<th class="skilltbl__skills__item">HTML</th>
+					<th class="skilltbl__skills__level">★★★★★</th>
+				</tr>
+				<tr>
+					<th class="skilltbl__skills__item">CSS(Sass・BootStrap)</th>
+					<th class="skilltbl__skills__level">★★★★☆</th>
+				</tr>
+			</table>
+			<table border="0" class="skilltbl__skills">
+				<tr>
+					<th class="skilltbl__skills__item">JavaScript(JQuery)</th>
+					<th class="skilltbl__skills__level">★★★★☆</th>
+				</tr>
+				<tr>
+					<th class="skilltbl__skills__item">PHP</th>
+					<th class="skilltbl__skills__level">★★★☆☆</th>
+				</tr>
+				<tr>
+					<th class="skilltbl__skills__item">WordPress</th>
+					<th class="skilltbl__skills__level">★★☆☆☆</th>
+				</tr>
+			</table>
+		</div>
+
 	</div>
+
 
 	<div class="modal" id="artModal">
 		<img id="artImg">

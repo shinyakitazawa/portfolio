@@ -1,7 +1,9 @@
 @charset "UTF-8";
 body, html {
   height: 100%;
-  margin: 0 auto; }
+  margin: 0px 0px;
+  background-image: url("../img/background.jpg");
+  background-repeat: repeat-y; }
 
 path {
   stroke: white; }
@@ -19,6 +21,35 @@ path {
     display: block;
     margin: 0 auto;
     padding: 10% 0; }
+
+.about {
+  background: gainsboro;
+  overflow: hidden; }
+
+.skilltbl {
+  display: flex;
+  flex-wrap: wrap;
+  background: #bee6dc;
+  padding: 5px 5px;
+  margin: 10px 10px;
+  border-radius: 15px;
+  filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.9)); }
+  .skilltbl__title {
+    width: 100%;
+    text-align: center;
+    font-size: 40px;
+    border-bottom: 2px solid black; }
+  .skilltbl__skills {
+    width: 100%; }
+    .skilltbl__skills__item {
+      text-align: left;
+      width: 70%; }
+    .skilltbl__skills__level {
+      text-align: left;
+      width: 30%; }
+    @media screen and (min-width: 560px) {
+      .skilltbl__skills {
+        width: 50%; } }
 
 .portfolio {
   background-image: url(../img/marble_background.png); }
@@ -50,7 +81,7 @@ path {
       object-fit: cover; }
     .portfolio__art:hover {
       animation: vibration .1s  infinite; }
-    @media screen and (min-width: 560x) {
+    @media screen and (min-width: 560px) {
       .portfolio__art {
         width: 200px;
         height: 200px;
@@ -65,12 +96,6 @@ path {
         .portfolio__art img {
           width: 230px;
           height: 230px; } }
-
-.about p {
-  padding-left: 15px;
-  font-size: 14px;
-  line-height: 15px;
-  background: grey; }
 
 .container {
   position: relative; }
@@ -89,11 +114,11 @@ path {
   z-index: 2;
   top: 0;
   position: fixed;
-  text-align: center;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 100%;
   display: none;
-  margin: 10px auto;
   background: rgba(0, 0, 0, 0.7); }
 
 #artImg {
@@ -108,7 +133,7 @@ path {
   right: 10px;
   top: 8px;
   cursor: pointer; }
-  @media screen and (min-width: 560x) {
+  @media screen and (min-width: 560px) {
     #humbMenu {
       display: none; } }
 
@@ -116,7 +141,8 @@ path {
   position: absolute;
   right: 10px;
   top: 35px;
-  z-index: 2; }
+  z-index: 2;
+  animation: fadeIn .5s ease 0s 1 normal; }
   #nav-bar li {
     font-size: 14px;
     list-style: none;
@@ -129,7 +155,7 @@ path {
       text-decoration: none;
       color: #ccc;
       cursor: pointer; }
-  @media screen and (min-width: 560x) {
+  @media screen and (min-width: 560px) {
     #nav-bar {
       top: 0px;
       display: block; }
