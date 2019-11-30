@@ -5,6 +5,12 @@ body, html {
   background-image: url("../img/background.jpg");
   background-repeat: repeat-y; }
 
+footer {
+  padding: 20px 0;
+  background: #323135;
+  color: #98969c;
+  text-align: center; }
+
 path {
   stroke: white; }
 
@@ -24,20 +30,31 @@ path {
 
 .about {
   background: gainsboro;
-  overflow: hidden; }
+  overflow: hidden;
+  box-sizing: border-box; }
+  .about__profile {
+    font-size: 14px;
+    font-weight: normal;
+    padding: 0 50px;
+    text-align: left; }
 
 .skilltbl {
   display: flex;
   flex-wrap: wrap;
   background: #bee6dc;
-  padding: 5px 5px;
+  padding: 10px 20px;
   margin: 10px 10px;
   border-radius: 15px;
   filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.9)); }
+  @media screen and (min-width: 560px) {
+    .skilltbl {
+      margin: 20px 20px; } }
   .skilltbl__title {
     width: 100%;
     text-align: center;
+    font-family: 'Raleway', sans-serif;
     font-size: 40px;
+    font-weight: bold;
     border-bottom: 2px solid black; }
   .skilltbl__skills {
     width: 100%; }
@@ -47,7 +64,7 @@ path {
     .skilltbl__skills__level {
       text-align: left;
       width: 30%; }
-    @media screen and (min-width: 560px) {
+    @media screen and (min-width: 960px) {
       .skilltbl__skills {
         width: 50%; } }
 
@@ -58,7 +75,8 @@ path {
     font-size: 40px;
     font-family: 'Aguafina Script', cursive;
     margin: 0 0;
-    padding: 10px 20px; }
+    padding: 10px 20px;
+    filter: drop-shadow(4px 4px 1px rgba(20, 10, 0, 0.6)); }
   .portfolio__categ {
     display: flex;
     flex-wrap: wrap;

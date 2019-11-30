@@ -3,11 +3,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ポートフォリオサイト</title>
+    <title>Shinya Kitazawa's Portfolio</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" href="favicon.ico">
-	<link href="https://fonts.googleapis.com/css?family=Aguafina+Script&display=swap" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css?family=Aguafina+Script|Raleway&display=swap" rel="stylesheet"> 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vivus/0.3.2/vivus.js"></script>
 </head>
@@ -192,7 +192,7 @@
 	</header>
 	
 
-    <div class="portfolio container" id="portfolio">
+    <section class="portfolio container" id="portfolio">
 
 		<p class="portfolio__title fadein">posters</p>
 		<div class="portfolio__categ">
@@ -226,18 +226,43 @@
 			<div class="portfolio__art fadein"><img src="img/case3.png"></div>
 			<div class="portfolio__art fadein"><img src="img/case4.png"></div>
 		</div>		
-	</div>
+	</section>
 
-    <div class="about container" id="about">
-		<h1>北澤 伸哉</h1>
-		<p>生年月日：1988年5月2日</p>
-		<p>出身：群馬県伊勢崎市</p>
-		<p>tel: 090-1736-8535</p>
-		<p>mail: reec8672@gmail.com</p>
-		<p>大学卒業後、6年間システムエンジニアとして勤務し、主に業務系・WEB系システムの開発に携わる。</p>
-		<p>学生の頃より、グラフィック・3DCGに興味があり、Photoshopやblenderを独学で学び、2D/3Dグラフィックの作成経験あり。</p>
-		<p>4年ほど前よりillustratorを独学で学び始め、知り合いを通じてチラシや名刺、コーポレートロゴの制作を引き受ける。</p>
-		<p>実務でWEB系システム開発を経験したことをきっかけにホームページの作成も受注するようになり、複数のホームページ作成の経験あり。</p>
+    <section class="about container" id="about">
+        <p class="portfolio__title fadein">about</p>
+        <div  class="about__profile">
+            <table border="0">
+                <tr>
+                    <th>名前：</th>
+                    <th>北澤 伸哉</th>
+                </tr>
+                <tr>
+                    <th>生年月日：</th>
+                    <th>1988年5月2日</th>
+                </tr>
+                <tr>
+                    <th>所在地：</th>
+                    <th>群馬県伊勢崎市</th>
+                </tr>
+                <tr>
+                    <th>最終学歴：</th>
+                    <th>新潟大学大学院　電気情報工学専攻</th>
+                </tr>
+                <tr>
+                    <th>tel：</th>
+                    <th>090-1736-8535</th>
+                </tr>
+                <tr>
+                    <th>mail：</th>
+                    <th>reec8672@gmail.com</th>
+                </tr>
+            </table>
+
+            <p>大学卒業後、6年間システムエンジニアとして勤務し、主に業務系・WEB系システムの開発に携わる。</p>
+            <p>学生の頃より、グラフィック・3DCGに興味があり、Photoshopやblenderを独学で学び、2D/3Dグラフィックの作成経験あり。</p>
+            <p>4年ほど前よりillustratorを独学で学び始め、知り合いを通じてチラシや名刺、コーポレートロゴの制作を引き受ける。</p>
+            <p>実務でWEB系システム開発を経験したことをきっかけにホームページの作成も受注するようになり、複数のホームページ作成の経験あり。</p>
+        </div>
 
 		<div class="skilltbl">
 			<div class="skilltbl__title">skills</div>
@@ -275,13 +300,16 @@
 			</table>
 		</div>
 
-	</div>
+	</section>
 
 
 	<div class="modal" id="artModal">
 		<img id="artImg">
 	</div>
 
+    <footer>
+        (c) Shinya Kitazawa All rights reserved.
+    </footer>
     <script>
         new Vivus('layer', { duration: 300 , start: 'autostart',type: 'scenario', pathTimingFunction: Vivus.EASE_OUT,}, function(obj){
             $("#layer").attr("class", "done");
