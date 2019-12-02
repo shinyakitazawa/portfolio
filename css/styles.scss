@@ -58,6 +58,10 @@ path {
         font-weight: normal;
         padding: 0 50px;
         text-align: left;
+        p {
+            font-size: 14px;
+            line-height: 18px;
+        }
     }
 }
 
@@ -98,6 +102,7 @@ path {
 
 .portfolio {
     background-image: url(../img/marble_background.png);
+    padding-bottom: 30px;
 	&__title {
 		display: block;
 		font-size: 40px;

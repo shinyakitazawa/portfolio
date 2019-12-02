@@ -37,6 +37,9 @@ path {
     font-weight: normal;
     padding: 0 50px;
     text-align: left; }
+    .about__profile p {
+      font-size: 14px;
+      line-height: 18px; }
 
 .skilltbl {
   display: flex;
@@ -69,7 +72,8 @@ path {
         width: 50%; } }
 
 .portfolio {
-  background-image: url(../img/marble_background.png); }
+  background-image: url(../img/marble_background.png);
+  padding-bottom: 30px; }
   .portfolio__title {
     display: block;
     font-size: 40px;
